@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import Layout from "./Components/Layout/Layout";
+import HomePage from "./pages/HomePage";
+import MoviesPage from "./pages/MoviesPage";
+import MovieDetailsPage from "./pages/MovieDetailsPage";
+import Cast from "./Components/Cast/Cast";
+import Reviews from "./Components/Reviews/Reviews";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <>
+      <Routes>
+        <Route
+          path="/"
+          element={<Layout />}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <Route
+            index
+            element={<HomePage />}
+          />
+          <Route
+            path="movies"
+            element={<MoviesPage />}
+          />
+          <Route
+            path="movies/:movieId"
+            element={<MovieDetailsPage />}
+          >
+            <Route
+              path="cast"
+              element={<Cast />}
+            />
+            <Route
+              path="reviews"
+              element={<Reviews />}
+            />
+          </Route>
+          <Route
+            path="*"
+            element={<h1 style={{ textAlign: "center" }}>Page not found</h1>}
+          />
+        </Route>
+      </Routes>
+    </>
   );
 }
-
-export default App;
