@@ -1,8 +1,8 @@
 {
   "name": "my-movie",
-  "homepage": "https://romanxz92.github.io/my-movie/",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://RomanXz92.github.io/my-movie/",
   "dependencies": {
     "@emotion/styled": "^11.11.0",
     "@testing-library/jest-dom": "^5.17.0",
