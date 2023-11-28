@@ -1,7 +1,3 @@
-# My project
-
-[my-movie](https://romanxz92.github.io/my-movie/)
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
